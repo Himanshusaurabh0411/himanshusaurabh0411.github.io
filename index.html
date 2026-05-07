@@ -172,6 +172,14 @@
         .ncc-card:hover { border-color: var(--ncc-red); box-shadow: 0 15px 30px rgba(239,68,68,0.1), 0 0 20px rgba(239,68,68,0.15); }
         .tag-accent { color: var(--accent); font-size: 0.75rem; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; }
         .tag-red { color: var(--ncc-red); font-size: 0.75rem; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; }
+        .identity-grid { display: grid; grid-template-columns: 1.1fr repeat(3, 1fr); gap: 1.5rem; align-items: stretch; }
+        .identity-intro { background: var(--card-bg); padding: 2.2rem; border-radius: 24px; border: 1px solid var(--glass-border); }
+        .identity-intro p { color: var(--text-dim); line-height: 1.8; margin-top: 1rem; }
+        .identity-card { background: var(--card-bg); padding: 1.8rem; border-radius: 24px; border: 1px solid var(--glass-border); transition: var(--transition); }
+        .identity-card:hover { transform: translateY(-6px); border-color: var(--accent); box-shadow: 0 15px 30px rgba(0,0,0,0.1), 0 0 20px var(--accent-glow); }
+        .identity-card ion-icon { color: var(--accent); font-size: 1.8rem; margin-bottom: 1rem; }
+        .identity-card h3 { font-size: 1.1rem; margin-bottom: 0.7rem; }
+        .identity-card p { color: var(--text-dim); font-size: 0.92rem; line-height: 1.6; }
 
         /* Skills */
         .skill-category h3 { margin-bottom: 1.5rem; display: flex; align-items: center; gap: 10px; font-size: 1.2rem; color: var(--text-main); }
@@ -205,6 +213,8 @@
             .hero-content { align-items: center; display: flex; flex-direction: column; }
             .btn-group { justify-content: center; }
             .project-card-long { padding: 2rem; }
+            .identity-grid { grid-template-columns: 1fr 1fr; }
+            .identity-intro { grid-column: 1 / -1; }
         }
         @media (max-width: 768px) {
             nav { padding: 1rem 5%; flex-direction: column; gap: 1rem; }
@@ -213,6 +223,7 @@
             .section { padding: 4rem 5%; }
             .section-title { font-size: 1.8rem; }
             .grid { grid-template-columns: 1fr; }
+            .identity-grid { grid-template-columns: 1fr; }
             .close-modal { right: 20px; top: 10px; }
         }
     </style>
@@ -224,6 +235,7 @@
     <nav>
         <a href="#" class="logo">Welcome to my CV</a>
         <div class="nav-links">
+            <a href="#about">About</a>
             <a href="#education">Education</a>
             <a href="#projects">Projects</a>
             <a href="#experience">Experience</a>
@@ -260,6 +272,32 @@
             <img src="https://i.postimg.cc/dty0HfBb/profile-jpeg.jpg" alt="Himanshu Saurabh" class="hero-image">
         </div>
     </header>
+
+    <section class="section" id="about">
+        <h2 class="section-title reveal">Personal Snapshot</h2>
+        <div class="identity-grid reveal">
+            <div class="identity-intro">
+                <span class="tag-accent">Who I Am</span>
+                <h3 style="margin-top: 8px; font-size: 1.6rem;">A resume-style portfolio with a public service direction.</h3>
+                <p>I am currently pursuing Computer Science at VIT Bhopal while building technical projects, volunteering through NSS, and growing a disciplined leadership foundation through NCC. This portfolio is meant to work like a living CV: clear, professional, and personal.</p>
+            </div>
+            <div class="identity-card">
+                <ion-icon name="school-outline"></ion-icon>
+                <h3>CSE Student</h3>
+                <p>Focused on Python, AI/ML, automation, and practical software fundamentals.</p>
+            </div>
+            <div class="identity-card">
+                <ion-icon name="people-outline"></ion-icon>
+                <h3>Current NSS Volunteer</h3>
+                <p>Actively involved in college-level service, outreach, and social responsibility.</p>
+            </div>
+            <div class="identity-card">
+                <ion-icon name="shield-checkmark-outline"></ion-icon>
+                <h3>NCC Foundation</h3>
+                <p>Carrying discipline, leadership, and public-service values into my work.</p>
+            </div>
+        </div>
+    </section>
 
     <section class="section" id="education">
         <h2 class="section-title reveal">Academic Background</h2>
@@ -404,9 +442,9 @@
             </div>
 
             <div class="timeline-item">
-                <span class="timeline-date">Community Outreach</span>
+                <span class="timeline-date">Current College Volunteering</span>
                 <h4 class="timeline-title">NSS Volunteer</h4>
-                <span class="timeline-org">National Service Scheme</span>
+                <span class="timeline-org">National Service Scheme, College Unit</span>
                 <p class="timeline-desc">Dedicated to grass-roots social welfare, merging technological understanding with community service to uplift local populations.</p>
                 <ul class="timeline-bullets">
                     <li>Organized awareness drives focusing on digital literacy and basic civic responsibilities.</li>
