@@ -216,6 +216,27 @@
         .impact-item ion-icon { color: var(--accent-2); font-size: 1.25rem; margin-top: 2px; }
         .impact-item strong { display: block; margin-bottom: 4px; }
         .impact-item span { color: var(--text-dim); font-size: 0.92rem; }
+        .signal-panel { border: 1px solid var(--glass-border); border-radius: 8px; overflow: hidden; background: var(--card-bg); }
+        .signal-header { display: flex; justify-content: space-between; align-items: center; gap: 1rem; padding: 1rem 1.25rem; border-bottom: 1px solid var(--glass-border); color: var(--text-dim); font-size: 0.78rem; text-transform: uppercase; letter-spacing: 1px; }
+        .signal-header strong { color: var(--accent); }
+        .signal-grid { display: grid; grid-template-columns: 0.85fr 1.15fr; min-height: 420px; }
+        .signal-rail { border-right: 1px solid var(--glass-border); padding: 1.5rem; display: grid; gap: 12px; align-content: start; }
+        .signal-pill { display: grid; grid-template-columns: auto 1fr; gap: 12px; align-items: center; border: 1px solid var(--glass-border); border-radius: 8px; padding: 14px; background: rgba(0,0,0,0.08); }
+        .signal-pill ion-icon { color: var(--accent); font-size: 1.35rem; }
+        .signal-pill span { display: block; color: var(--text-dim); font-size: 0.72rem; text-transform: uppercase; letter-spacing: 1px; }
+        .signal-pill strong { display: block; line-height: 1.25; }
+        .signal-map { position: relative; min-height: 420px; padding: 2rem; display: grid; place-items: center; }
+        .signal-map::before, .signal-map::after { content: ""; position: absolute; inset: 18%; border: 1px solid var(--glass-border); transform: rotate(45deg); border-radius: 8px; }
+        .signal-map::after { inset: 28%; transform: rotate(0deg); border-color: rgba(245,158,11,0.35); }
+        .signal-center { position: relative; z-index: 2; width: min(260px, 70vw); aspect-ratio: 1; border: 1px solid var(--accent); border-radius: 8px; display: grid; place-items: center; text-align: center; padding: 1.25rem; background: rgba(8,13,18,0.86); box-shadow: 0 0 40px var(--accent-glow); }
+        body.light-mode .signal-center { background: rgba(255,255,255,0.92); }
+        .signal-center span { color: var(--text-dim); font-size: 0.72rem; text-transform: uppercase; letter-spacing: 1px; }
+        .signal-center strong { display: block; font-size: 1.45rem; line-height: 1.1; margin-top: 8px; }
+        .signal-node { position: absolute; z-index: 3; border: 1px solid var(--glass-border); border-radius: 8px; padding: 10px 12px; background: var(--bg); color: var(--text-main); font-size: 0.86rem; font-weight: 800; box-shadow: 0 10px 30px rgba(0,0,0,0.22); }
+        .signal-node.n1 { top: 12%; left: 12%; }
+        .signal-node.n2 { top: 12%; right: 12%; }
+        .signal-node.n3 { bottom: 12%; left: 12%; }
+        .signal-node.n4 { bottom: 12%; right: 12%; }
         .skill-tag:hover { border-color: var(--accent); background: var(--accent-glow); transform: translateY(-3px); }
         .skill-tag.learning { border-style: dashed; color: var(--text-dim); }
 
@@ -245,6 +266,8 @@
             .project-card-long { padding: 2rem; }
             .impact-band { grid-template-columns: 1fr; }
             .case-grid { grid-template-columns: 1fr; }
+            .signal-grid { grid-template-columns: 1fr; }
+            .signal-rail { border-right: 0; border-bottom: 1px solid var(--glass-border); }
         }
         @media (max-width: 768px) {
             nav { padding: 1rem 5%; flex-direction: column; gap: 1rem; }
@@ -256,6 +279,8 @@
             .mission-grid { grid-template-columns: 1fr; }
             .btn-group { flex-direction: column; width: 100%; }
             .btn { width: 100%; }
+            .signal-map { min-height: 520px; }
+            .signal-node { max-width: 130px; text-align: center; }
             .close-modal { right: 20px; top: 10px; }
         }
     </style>
@@ -268,6 +293,7 @@
         <a href="#" class="logo">Public Impact Lab</a>
         <div class="nav-links">
             <a href="#mission">Mission</a>
+            <a href="#signal">Signal</a>
             <a href="#education">Education</a>
             <a href="#projects">Projects</a>
             <a href="#impact">Impact</a>
@@ -329,6 +355,48 @@
             </div>
         </div>
     </header>
+
+    <section class="section" id="signal">
+        <h2 class="section-title reveal">Personal Signal Map</h2>
+        <div class="signal-panel reveal">
+            <div class="signal-header">
+                <span>Portfolio OS / Identity Layer</span>
+                <strong>Unique to Himanshu</strong>
+            </div>
+            <div class="signal-grid">
+                <div class="signal-rail">
+                    <div class="signal-pill">
+                        <ion-icon name="code-slash-outline"></ion-icon>
+                        <div><span>Core</span><strong>Computer Science learner building practical systems</strong></div>
+                    </div>
+                    <div class="signal-pill">
+                        <ion-icon name="heart-outline"></ion-icon>
+                        <div><span>Service</span><strong>Currently serving as an NSS volunteer in college</strong></div>
+                    </div>
+                    <div class="signal-pill">
+                        <ion-icon name="shield-checkmark-outline"></ion-icon>
+                        <div><span>Discipline</span><strong>NCC foundation with leadership and responsibility</strong></div>
+                    </div>
+                    <div class="signal-pill">
+                        <ion-icon name="flag-outline"></ion-icon>
+                        <div><span>Direction</span><strong>Public-service mindset with UPSC ambition</strong></div>
+                    </div>
+                </div>
+                <div class="signal-map" aria-label="Himanshu's portfolio identity map">
+                    <div class="signal-node n1">AI Builder</div>
+                    <div class="signal-node n2">NSS Volunteer</div>
+                    <div class="signal-node n3">NCC Discipline</div>
+                    <div class="signal-node n4">Public Impact</div>
+                    <div class="signal-center">
+                        <div>
+                            <span>Operating Principle</span>
+                            <strong>Build useful tech for real people</strong>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <section class="section" id="education">
         <h2 class="section-title reveal">Academic Background</h2>
